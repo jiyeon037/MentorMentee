@@ -19,7 +19,7 @@
         android:id="@+id/drawer_user"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:src="@drawable/pic1"
+        android:src="@drawable/meetingicon"
         android:layout_marginTop="70dp"
         android:layout_marginLeft="20dp"/>
     <TextView
