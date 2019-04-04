@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="230dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/backcolor">
+
+
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/gearwhite"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="16dp"/>
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/drawer_user"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/pic1"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="20dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="정현아"
+        android:id="@+id/drawer_name"
+        android:layout_below="@+id/drawer_user"
+        android:layout_alignLeft="@+id/drawer_user"
+        android:layout_marginTop="20dp"
+        android:textSize="25dp"
+        android:textColor="#ffffff"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/drawer_name"
+        android:layout_alignLeft="@+id/drawer_name"
+        android:id="@+id/drawer_email"
+        android:text="gwi02378@gmail.com"
+        android:layout_marginTop="5dp"
+        android:textColor="#ffffff"/>
+</RelativeLayout>

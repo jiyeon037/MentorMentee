@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:icon="@drawable/user"
+            android:title="김지연"
+            android:id="@+id/user1"/>
+        <item
+            android:title="전은지"
+            android:icon="@drawable/user"
+            android:id="@+id/user2"/>
+    </group>
+</menu>
