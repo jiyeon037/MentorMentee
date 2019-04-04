@@ -2,6 +2,11 @@
 <resources>
     <color name="colorPrimary">#50c9c3</color>
     <color name="colorPrimaryDark">#96DEDA</color>
+    <color name="colorPrimary2">#008577</color>
+    <color name="colorPrimaryDark2">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="colorLight">#96DEDA</color>
+    <color name="buttonPressed">#DDDDDD</color>
+    <color name="moreDarkgray">#666666</color>
+    <color name="navercolor">#17DD00</color>
 </resources>
