@@ -24,48 +24,48 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="20"
-                android:id="@+id/editEmail" android:hint="이메일"
+                android:id="@+id/editID" android:hint="아이디"
                 android:layout_marginBottom="3dp" android:textColorLink="@android:color/white"
                 android:textColor="@android:color/white" android:textSize="20sp"
                 android:textColorHint="@android:color/background_light"
                 style="@style/EditTextStyle" android:layout_marginLeft="20dp" android:layout_marginRight="20dp"
-                android:inputType="textEmailAddress"/>
+                android:inputType="text"/>
         <EditText
-                android:layout_below="@id/editEmail"
+                android:layout_below="@id/editID"
                 android:theme="@style/EditTextStyle"
                 android:layout_width="wrap_content"
                 android:inputType="textPassword"
                 android:ems="20"
-                android:id="@+id/editPassword" android:hint="비밀번호"
+                android:id="@+id/editPWD" android:hint="비밀번호"
                 android:layout_marginBottom="10dp" android:textColorLink="@android:color/white"
                 android:textColor="@android:color/white" android:textSize="20sp"
                 android:textColorHint="?attr/colorBackgroundFloating"
                 style="@style/EditTextStyle" android:layout_height="wrap_content" android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"/>
         <Button
-                android:layout_below="@id/editPassword"
+                android:layout_below="@id/editPWD"
                 android:text="로그인"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/button"
+                android:layout_height="wrap_content" android:id="@+id/btnLogin"
                 android:textColor="@color/colorPrimary"
                 android:background="@drawable/button_background"
                 android:layout_marginLeft="20dp" android:layout_marginRight="20dp"
 
                 android:layout_marginTop="10dp"/>
         <Button
-                android:layout_below="@id/button"
+                android:layout_below="@id/btnLogin"
                 android:text="비밀번호를 잊으셨나요?"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/button3"
+                android:layout_height="wrap_content" android:id="@+id/btnForgetPWD"
                 android:background="#00ff0000"
                 android:textColor="@color/moreDarkgray" android:layout_marginTop="10dp"/>
     </RelativeLayout>
 
     <Button
-            android:layout_above="@id/button2"
+            android:layout_above="@id/btnNaverLogin"
             android:text="처음 오셨나요? 여기를 클릭하여 가입!"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/button6"
+            android:layout_height="wrap_content" android:id="@+id/btnJoin"
             android:background="#00ff0000"
             android:layout_marginTop="10dp"
             android:textColor="@color/moreDarkgray" android:layout_marginBottom="10dp"/>
@@ -73,7 +73,7 @@
             android:layout_alignParentBottom="true"
             android:text="네이버 아이디로 로그인"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/button2" android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content" android:id="@+id/btnNaverLogin" android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp" android:layout_marginBottom="20dp"
             android:background="@color/navercolor" android:textColor="@android:color/background_light"/>
 
