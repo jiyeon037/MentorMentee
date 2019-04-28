@@ -18,7 +18,7 @@ class JoinActivity : AppCompatActivity() {
 
         var editID = findViewById<EditText>(R.id.editID)
         var editPWD = findViewById<EditText>(R.id.editPWD)
-        var editPWDconfirm = findViewById<EditText>(R.id.editPWDConfirm)
+        var editPWDConfirm = findViewById<EditText>(R.id.editPWDConfirm)
         var editEmail = findViewById<EditText>(R.id.editEmail)
         var btnCheckExistID = findViewById<Button>(R.id.btnCheckExistID)
         var btnDone = findViewById<Button>(R.id.btnDone)
@@ -27,7 +27,7 @@ class JoinActivity : AppCompatActivity() {
             view ->
             var id = editID.text.toString()
             var pwd = editPWD.text.toString()
-            var pwdConfirm = editPWDconfirm.text.toString()
+            var pwdConfirm = editPWDConfirm.text.toString()
             var email = editEmail.text.toString()
 
         }
