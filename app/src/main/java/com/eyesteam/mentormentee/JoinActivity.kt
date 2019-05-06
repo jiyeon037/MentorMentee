@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import kotlinx.android.synthetic.main.activity_join.*
 
 class JoinActivity : AppCompatActivity() {
 
@@ -15,13 +16,6 @@ class JoinActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_join)
-
-        var editID = findViewById<EditText>(R.id.editID)
-        var editPWD = findViewById<EditText>(R.id.editPWD)
-        var editPWDConfirm = findViewById<EditText>(R.id.editPWDConfirm)
-        var editEmail = findViewById<EditText>(R.id.editEmail)
-        var btnCheckExistID = findViewById<Button>(R.id.btnCheckExistID)
-        var btnDone = findViewById<Button>(R.id.btnDone)
 
         btnCheckExistID.setOnClickListener {
             view ->
