@@ -4,21 +4,36 @@ import android.annotation.SuppressLint
 import android.os.AsyncTask
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import kotlinx.android.synthetic.main.activity_join.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class JoinActivity : AppCompatActivity() {
 
     private val IP_ADDRESS = "15.164.95.90"
     private val TAG = "php "
 
+    var retroService : RetroService? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_join)
 
+        val retrofit = Retrofit.Builder()
+            .baseUrl("http://15.164.95.90")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        retroService = retrofit.create(RetroService::class.java)
+
         btnCheckExistID.setOnClickListener {
-            view ->
+            view : View ->
             var id = editID.text.toString()
             var pwd = editPWD.text.toString()
             var pwdConfirm = editPWDConfirm.text.toString()
@@ -28,6 +43,16 @@ class JoinActivity : AppCompatActivity() {
 
         btnDone.setOnClickListener {
             InsertData(this).execute()
+
+            var join : Join = Join(editID.text.toString(), editPWD.text.toString(), editEmail.text.toString(), editID.text.toString())
+            var call : Call<Void>? = retroService?.postJoin(join)
+
+            /*
+            call.enqueue(object : Callback<Void>){
+                override fun onResponse(call : Call<Join>?, response: Response<Void>){
+
+                }
+            }*/
         }
     }
 
@@ -40,8 +65,8 @@ class JoinActivity : AppCompatActivity() {
         }
 
         override fun doInBackground(vararg p0: String?): String {
-
             var result = ""
+
 
             return result
         }
