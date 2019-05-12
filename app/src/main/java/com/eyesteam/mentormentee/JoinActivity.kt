@@ -13,7 +13,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-
+/*
 class JoinActivity : AppCompatActivity() {
 
     private val IP_ADDRESS = "15.164.95.90"
@@ -44,15 +44,15 @@ class JoinActivity : AppCompatActivity() {
         btnDone.setOnClickListener {
             InsertData(this).execute()
 
-            var join : Join = Join(editID.text.toString(), editPWD.text.toString(), editEmail.text.toString(), editID.text.toString())
-            var call : Call<Void>? = retroService?.postJoin(join)
+            val call : Call<Void>? = retroService?.postJoin(editID.text.toString(), editPWD.text.toString(), editID.text.toString(), editEmail.text.toString())
 
             /*
             call.enqueue(object : Callback<Void>){
-                override fun onResponse(call : Call<Join>?, response: Response<Void>){
-
+                override fun onResponse(call : Call<Void>?, response: Response<Void>?){
+                    val data= response?.body()?.result
                 }
             }*/
+
         }
     }
 
@@ -79,4 +79,4 @@ class JoinActivity : AppCompatActivity() {
 }
 
 
-
+*/
