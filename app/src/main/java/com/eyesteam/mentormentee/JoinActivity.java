@@ -27,10 +27,6 @@ public class JoinActivity extends AppCompatActivity {
         emailEt = findViewById(R.id.editEmail);
         btnDone = findViewById(R.id.btnDone);
 
-
-
-
-
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://15.164.95.90")
                 .addConverterFactory(GsonConverterFactory.create())

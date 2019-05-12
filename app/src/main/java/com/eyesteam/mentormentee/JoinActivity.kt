@@ -46,12 +46,12 @@ class JoinActivity : AppCompatActivity() {
 
             val call : Call<Void>? = retroService?.postJoin(editID.text.toString(), editPWD.text.toString(), editID.text.toString(), editEmail.text.toString())
 
-            /*
+
             call.enqueue(object : Callback<Void>){
                 override fun onResponse(call : Call<Void>?, response: Response<Void>?){
                     val data= response?.body()?.result
                 }
-            }*/
+            }
 
         }
     }

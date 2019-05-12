@@ -8,7 +8,7 @@ data class ResUserPw(var UserPw: String? = null)
 
 interface RetroService {
     @POST("/join.php")
-    fun postJoin(@Query("join") join : Join) : Call<Void>
+    fun postJoin(@Query("UserId") UserId: String, @Query("UserPW") UserPW: String, @Query("UserName") UserName : String, @Query("UserEmail") UserEmail : String) : Call<Void>
 
     @FormUrlEncoded
     @POST("/login.php")
