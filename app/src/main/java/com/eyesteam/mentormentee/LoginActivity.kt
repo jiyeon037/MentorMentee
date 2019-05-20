@@ -33,25 +33,23 @@ class LoginActivity : AppCompatActivity() {
         var server = retrofit.create(RetroService::class.java)
 
         btnLogin.setOnClickListener {
-            server.postRequest(userId,userPw).enqueue(object : Callback<Void>{
-                override fun onResponse(call: Call<Void>, response: Response<Void>) {
-                    if(response.isSuccessful){
-                        val body = RetrofitRepo()
-/*                        if(body != null){
+            server.getRequest(userId,userPw).enqueue(object : Callback<List<RetrofitRepo>>{
+                override fun onResponse(call: Call<List<RetrofitRepo>>, response: Response<List<RetrofitRepo>>) {
+          //          if(response.isSuccessful){
+                        val body : List<RetrofitRepo> = ArrayList()
 
-                            Log.d("**********", body.userId)
-                            Log.d("**********", body.userPw)
+                        Log.d("**********", body[0].toString())
+                     //   Log.d("**********", body.userPw)
 
-                            Log.d("**********", body.info[0].toString())
+/*                            Log.d("**********", body.info[0].toString())
                             Log.d("**********", body.info[1].toString())
                             Log.d("**********", body.info[2].toString())
-                            Log.d("**********", body.info[3].toString())
-                        }*/
-                    }
+                            Log.d("**********", body.info[3].toString())*/
+           //         }
                     Log.d("1111111111111", editID.text.toString())
                 }
 
-                override fun onFailure(call: Call<Void>, t: Throwable) {
+                override fun onFailure(call: Call<List<RetrofitRepo>>, t: Throwable) {
                    Log.d("222222222222","2222222222222")
                 }
             })

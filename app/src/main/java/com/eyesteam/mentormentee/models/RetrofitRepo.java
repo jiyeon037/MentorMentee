@@ -7,6 +7,11 @@ public class RetrofitRepo {
     String UserId;
     String UserPw;
 
+    public RetrofitRepo(String userId, String userPw) {
+        UserId = userId;
+        UserPw = userPw;
+    }
+
     public String getUserId() {
         return UserId;
     }
