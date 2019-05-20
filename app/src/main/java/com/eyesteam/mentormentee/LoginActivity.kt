@@ -17,8 +17,8 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        val userId = editID.text.toString()
-        val userPw = editPWD.text.toString()
+        val UserId = editID.text.toString()
+        val UserPw = editPWD.text.toString()
 
         btnJoin.setOnClickListener {
             val nextIntent = Intent(this, JoinActivity::class.java)
@@ -33,10 +33,11 @@ class LoginActivity : AppCompatActivity() {
         var server = retrofit.create(RetroService::class.java)
 
         btnLogin.setOnClickListener {
-            server.getRequest(userId,userPw).enqueue(object : Callback<List<RetrofitRepo>>{
+            server.getRequest(UserId,UserPw).enqueue(object : Callback<List<RetrofitRepo>>{
                 override fun onResponse(call: Call<List<RetrofitRepo>>, response: Response<List<RetrofitRepo>>) {
-          //          if(response.isSuccessful){
-                        val body : List<RetrofitRepo> = ArrayList()
+                    if(response.isSuccessful){
+                        val body : List<RetrofitRepo> = response.body()!!
+                       // val body : List<RetrofitRepo> = ArrayList()
 
                         Log.d("**********", body[0].toString())
                      //   Log.d("**********", body.userPw)
@@ -45,7 +46,7 @@ class LoginActivity : AppCompatActivity() {
                             Log.d("**********", body.info[1].toString())
                             Log.d("**********", body.info[2].toString())
                             Log.d("**********", body.info[3].toString())*/
-           //         }
+                    }
                     Log.d("1111111111111", editID.text.toString())
                 }
 
