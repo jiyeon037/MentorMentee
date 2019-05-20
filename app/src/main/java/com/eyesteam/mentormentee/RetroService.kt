@@ -1,10 +1,8 @@
 package com.eyesteam.mentormentee
 
-import com.eyesteam.mentormentee.models.LoginData
+import com.eyesteam.mentormentee.models.RetrofitRepo
 import retrofit2.Call
 import retrofit2.http.*
-
-// data class ResponseDTO(var result: String? = null)
 
 interface RetroService {
     @POST("/join.php")
@@ -14,11 +12,6 @@ interface RetroService {
     @FormUrlEncoded
     @POST("/login.php")
     fun postRequest(@Field("UserId")UserId: String,
-             @Field("UserPw")UserPw: String): Call<LoginData>
-
-    // This method is used for "GET"
-    @GET("/login.php")
-    fun getRequest(@Query("UserId")UserId: String,
-            @Query("UserPw")UserPw: String): Call<LoginData>
+                    @Field("UserPw")UserPw: String) : Call<Void>
 
 }

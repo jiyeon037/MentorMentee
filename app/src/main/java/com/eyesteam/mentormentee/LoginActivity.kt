@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
-import com.eyesteam.mentormentee.models.LoginData
+import com.eyesteam.mentormentee.models.RetrofitRepo
 import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -26,29 +26,32 @@ class LoginActivity : AppCompatActivity() {
         }
 
         var retrofit = Retrofit.Builder()
-            .baseUrl("http://15.164.95.90/")
+            .baseUrl("http://15.164.95.90")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         // interface와 retrofit 결합
         var server = retrofit.create(RetroService::class.java)
 
         btnLogin.setOnClickListener {
-            server.postRequest(userId,userPw).enqueue(object : Callback<LoginData>{
-                override fun onResponse(call: Call<LoginData>, response: Response<LoginData>) {
+            server.postRequest(userId,userPw).enqueue(object : Callback<Void>{
+                override fun onResponse(call: Call<Void>, response: Response<Void>) {
                     if(response.isSuccessful){
-                         val body = LoginData() ////////////
-                        if(body != null){
-                            Log.d("**********", body.UserId + " ")
-                            Log.d("**********", body.UserPw + " ")
-                            Log.d("**********", body.message + " ")
-                            Log.d("**********", body.responseCode.toString())
-                        }
+                        val body = RetrofitRepo()
+/*                        if(body != null){
+
+                            Log.d("**********", body.userId)
+                            Log.d("**********", body.userPw)
+
+                            Log.d("**********", body.info[0].toString())
+                            Log.d("**********", body.info[1].toString())
+                            Log.d("**********", body.info[2].toString())
+                            Log.d("**********", body.info[3].toString())
+                        }*/
                     }
-                    println(response?.body().toString())
                     Log.d("1111111111111", editID.text.toString())
                 }
 
-                override fun onFailure(call: Call<LoginData>, t: Throwable) {
+                override fun onFailure(call: Call<Void>, t: Throwable) {
                    Log.d("222222222222","2222222222222")
                 }
             })
